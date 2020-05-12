@@ -69,6 +69,22 @@ body {
     height: 50px;
 }
 
+/*SPLASH SCREEN*/
+
+
+
+.mainImg {
+    position:absolute;
+    margin:0;
+    padding:0;
+    left:0px;
+    width:300px;
+}
+
+
+
+
+
 
 /*PHONE MOCKUP*/
 
@@ -101,46 +117,6 @@ main {
     font-size: 14vw;
 }
 
-.title .title__svg {
-    width: 17vw;
-    height: 34vw;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.title .title__svg video {
-    width: 95%;
-    height: 95%;
-    object-fit: cover;
-}
-
-.title .title__svg svg {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-}
-
-.title .title__svg svg text {
-    font-family: 'Major Mono Display', monospace;
-    text-transform: uppercase;
-    transform-origin: center center;
-    font-size: 3em;
-}
-
-.title .title__svg svg rect {
-    fill: #fff;
-}
-
-.title .title__svg svg > rect {
-    -webkit-mask: url(#mask);
-    mask: url(#mask);
-    fill: #000;
-}
 
 .iphonex {
     width: 414px;
@@ -231,7 +207,7 @@ main {
     width: 50em;
     height: 50em;
     border-radius: 50%;
-    background: linear-gradient(110deg, #AB34B2, #D63776, #5D2B8B);
+    background: linear-gradient(110deg, #F0D473 , #FF8E59);
     bottom: 0;
 }
 
@@ -383,7 +359,7 @@ main {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-color: pink;
+    
     z-index: 99;
     position: absolute;
     top: 0;
@@ -522,6 +498,7 @@ font-size: 30px;
 .runOverlayChild3 {
     text-align: right;
 }
+
 
 /*COMPASS*/
 
