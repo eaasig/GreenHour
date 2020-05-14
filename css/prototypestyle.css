@@ -10,11 +10,15 @@
     --blue: #44B2BF;
     --green: #406B5A;
     --textColor: #424B5A;
+    --inactive: #99A6AD;
 }
 
-*, *:before, *:after {
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
+
 /*
 font-family: 'Open Sans', sans-serif;
 font-family: 'Raleway', sans-serif;
@@ -24,7 +28,14 @@ font-family: 'Raleway', sans-serif;
     display: none;
 }
 
+a {
+    text-decoration: none;
 
+}
+
+.inactive {
+    color: var(--inactive);
+}
 
 body {
     width: 100%;
@@ -68,20 +79,6 @@ body {
     width: 50px;
     height: 50px;
 }
-
-/*SPLASH SCREEN*/
-
-
-
-.mainImg {
-    position:absolute;
-    margin:0;
-    padding:0;
-    left:0px;
-    width:300px;
-}
-
-
 
 
 
@@ -207,7 +204,7 @@ main {
     width: 50em;
     height: 50em;
     border-radius: 50%;
-    background: linear-gradient(110deg, #F0D473 , #FF8E59);
+    background: linear-gradient(110deg, #F0D473, #FF8E59);
     bottom: 0;
 }
 
@@ -359,7 +356,7 @@ main {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    
+
     z-index: 99;
     position: absolute;
     top: 0;
@@ -371,38 +368,16 @@ main {
 
 }
 
-.clock {
+#clock {
     color: var(--textColor);
     font-family: 'Open Sans', sans-serif;
     display: flex;
     overflow: hidden;
-    margin-left: 25px
+    margin-left: 25px;
+    z-index: 9999;
 }
 
 
-.clock > div {
-    display: flex;
-}
-
-
-.tick-hidden {
-    opacity: 0;
-}
-
-.move {
-    animation: move linear 1s infinite;
-}
-
-
-@keyframes move {
-    from {
-        transform: translateY(0vh);
-    }
-
-    to {
-        transform: translateY(-20vh);
-    }
-}
 
 
 
@@ -437,6 +412,8 @@ main {
 }
 
 
+/*Run Overlay*/
+
 .runOverlay {
     position: absolute;
     width: 100%;
@@ -448,8 +425,8 @@ main {
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 
 }
 
@@ -460,9 +437,9 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding:0px;
-    margin:0px;
-    
+    padding: 0px;
+    margin: 0px;
+
 }
 
 .cards {
@@ -471,23 +448,23 @@ main {
     font-weight: normal;
     font-size: 14px;
     line-height: 170.23%;
-    padding:0px;
-    margin:0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .runOverlayChild > p:nth-child(2) {
     font-weight: bold;
-      padding:0px;
-    margin:0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 
 
 .runTimer {
-font-weight: bold;
-font-size: 30px;
-      padding:0px;
-    margin:0px;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
 
 }
 
@@ -503,134 +480,151 @@ font-size: 30px;
 /*COMPASS*/
 
 
-
-
-
 #compass {
-	width: 200px; height: 200px;
-	border-radius: 50%;
-	margin: 0 auto;
-	position: absolute;
-    top:335px;
-    left:370px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 335px;
+    left: 370px;
     text-align: center;
-	border: 10px solid var(--textColor);
-	background-color: white;
-		
+    border: 10px solid var(--textColor);
+    background-color: white;
 
-	box-shadow:
-		0 0 4px #000,
-		0 0 1px 8px var(--orange),
-		5px 5px 5px var(--textColor);
-	
-	transition: transform 0.5s ease, box-shadow 0.5s ease;
-    zoom:0.4
+
+    box-shadow:
+        0 0 4px #000,
+        0 0 1px 8px var(--orange),
+        5px 5px 5px var(--textColor);
+
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    zoom: 0.4
 }
 
 
 #compass:before {
-	content: '';
-	
-	border: 2px dashed var(--textColor);
-	position: absolute;
-	left: 10px; right: 10px;
-	bottom: 10px; top: 10px;
-	
-	border-radius: 50%;
+    content: '';
+
+    border: 2px dashed var(--textColor);
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: 10px;
+
+    border-radius: 50%;
 }
 
 #compass:after {
-	content: '';
-	
-	position: absolute;
-	left: -10px; right: -10px;
-	bottom: -10px; top: -10px;
-	
-	border-radius: 50%;
-	
-	background: linear-gradient(
-		-45deg,
-		rgba(255,255,255,0.9) 0%,
-		rgba(255,255,255,0.3) 47%,
-		rgba(255,255,255,0) 48%,
-		rgba(255,255,255,0) 100%
-	);
+    content: '';
+
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    top: -10px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(-45deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.3) 47%,
+            rgba(255, 255, 255, 0) 48%,
+            rgba(255, 255, 255, 0) 100%);
 }
 
 
 #compass span {
-	position: absolute;
-	font-weight: bold;
+    position: absolute;
+    font-weight: bold;
 }
 
 /* North */
 #compass span:nth-child(1) {
-	left: 90px; top: 20px;
+    left: 90px;
+    top: 20px;
 }
+
 /* South */
 #compass span:nth-child(3) {
-	left: 90px; bottom: 20px;
+    left: 90px;
+    bottom: 20px;
 }
 
 /* East */
 #compass span:nth-child(2) {
-	right: 25px; top: 80px;
+    right: 25px;
+    top: 80px;
 }
+
 /* West */
 #compass span:nth-child(4) {
-	left: 25px; top: 80px;
+    left: 25px;
+    top: 80px;
 }
 
 
 @keyframes rotate {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #pointer {
-	width: 60px; height: 30px;
-	
+    width: 60px;
+    height: 30px;
 
-	position: relative;
-	left: 50%; top: 50%;
-	margin-left: -30px; margin-top: -15px;
-	
 
-	animation: rotate 5s cubic-bezier(1,.2,.5,1) infinite alternate;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -30px;
+    margin-top: -15px;
+
+
+    animation: rotate 5s cubic-bezier(1, .2, .5, 1) infinite alternate;
 }
 
 
 #pointer:before {
-	content: '';
-	
-	position: absolute;
-	left: 0; right: 0;
-	top: 0; bottom: 0;
-	
-	background: linear-gradient(
-		-63deg,
-		rgba(79,188,242,1) 1%,
-		rgba(26,110,206,1) 50%,
-		rgba(216,216,216,1) 51%,
-		rgba(244,94,80,1) 53%,
-		rgba(255,45,45,1) 100%
-	);
-	
-	transform: skewX(60deg);
+    content: '';
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background: linear-gradient(-63deg,
+            rgba(79, 188, 242, 1) 1%,
+            rgba(26, 110, 206, 1) 50%,
+            rgba(216, 216, 216, 1) 51%,
+            rgba(244, 94, 80, 1) 53%,
+            rgba(255, 45, 45, 1) 100%);
+
+    transform: skewX(60deg);
 }
 
 #pointer:after {
-	content: '';
-	
-	width: 10px; height: 10px;
-	background: var(--textColor);
-	border-radius: 50%;
-	box-shadow:
-		inset 0 0 4px 2px #4d4d4d,
-		0 0 5px 1px white;
-		position: absolute;
-	left: 50%; top: 50%;
-	margin-left: -5px; margin-top: -5px;
+    content: '';
+
+    width: 10px;
+    height: 10px;
+    background: var(--textColor);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 4px 2px #4d4d4d,
+        0 0 5px 1px white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
 }
 
 
@@ -639,209 +633,58 @@ font-size: 30px;
 
 
 
-/*TIMER*/
 
-.timer-group {
-  height: 200px;
-  margin: 0 auto;
-  position: absolute;
-  width: 200px;
-top:10px;
+/*CONTENT */
+
+
+.content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.mainImg img {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.CTA a {
+    text-decoration: none;
+    color: var(--textColor);
+    padding: 15px;
     z-index: 99;
-}
-
-.timer {
-  border-radius: 50%;
-  height: 100px;
-  overflow: hidden;
-  position: absolute;
-  width: 100px;
-}
-
-.timer:after {
-  background: #111 url(https://codepen.io/images/classy_fabric.png);
-  border-radius: 50%;
-  content: "";
-  display: block;
-  height: 80px;
-  left: 10px;
-  position: absolute;
-  width: 80px;
-  top: 10px;
-}
-
-.timer .hand {
-  float: left;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 50%;
-}
-
-.timer .hand span {
-  border: 50px solid rgba(0, 255, 255, .4);
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-radius: 50%;
-  display: block;
-  height: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: rotate(225deg);
-  width: 0;
-}
-
-.timer .hand:first-child {
-  transform: rotate(180deg);
-}
-
-.timer .hand span {
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.timer .hand:first-child span {
-  animation-name: spin1;
-}
-
-.timer .hand:last-child span {
-  animation-name: spin2; 
-}
-
-.timer.hour {
-  background: rgba(0, 0, 0, .3);
-  height: 400px;
-  left: 0;
-  width: 400px;
-  top: 0;
-}
-
-.timer.hour .hand span {
-  animation-duration: 3600s;
-  border-top-color: rgba(255, 0, 255, .4);
-  border-right-color: rgba(255, 0, 255, .4);
-  border-width: 200px;
-}
-
-.timer.hour:after {
-  height: 360px;
-  left: 20px;
-  width: 360px;
-  top: 20px;
-}
-
-.timer.minute {
-  background: rgba(0, 0, 0, .2);
-  height: 350px;
-  left: 25px;
-  width: 350px;
-  top: 25px;
-}
-
-.timer.minute .hand span {
-  animation-duration: 60s;
-  border-top-color: rgba(0, 255, 255, .4);
-  border-right-color: rgba(0, 255, 255, .4);
-  border-width: 175px;
-}
-
-.timer.minute:after {
-  height: 310px;
-  left: 20px;
-  width: 310px;
-  top: 20px;
-}
-
-.timer.second {
-  background: rgba(0, 0, 0, .2);
-  height: 300px;
-  left: 50px;
-  width: 300px;
-  top: 50px;
-}
-
-.timer.second .hand span {
-  animation-duration: 1s;
-  border-top-color: rgba(255, 255, 255, .15);
-  border-right-color: rgba(255, 255, 255, .15);
-  border-width: 150px;
-}
-
-.timer.second:after {
-  height: 296px;
-  left: 2px;
-  width: 296px;
-  top: 2px;
-}
-
-.face {
-  background: rgba(0, 0, 0, .1);
-  border-radius: 50%;
-  height: 296px;
-  left: 52px;
-  padding: 165px 40px 0;
-  position: absolute;
-  width: 296px;
-  text-align: center;
-  top: 52px;
-}
-
-.face h2 {
-  font-weight: 300; 
-}
-
-.face p {
-  border-radius: 20px;
-  font-size: 76px;
-  font-weight: 400;
-  position: absolute;
-  top: 17px;
-  width: 260px;
-  left: 20px;
-}
-
-@keyframes spin1 {
-  0% {
-    transform: rotate(225deg);
-  }
-  50% {
-    transform: rotate(225deg);
-  }
-  100% {
-    transform: rotate(405deg);
-  }
-}
-
-@keyframes spin2 {
-  0% {
-    transform: rotate(225deg);
-  }
-  50% {
-    transform: rotate(405deg);
-  }
-  100% {
-    transform: rotate(405deg);
-  }
+    box-shadow: 0px 5px 10px rgba(66, 75, 90, 0.3);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    background: linear-gradient(110deg, #F0D473, #FF8E59);
+    font-weight: 800;
+    width: 200px;
+  
 }
 
 
+.CTA {  margin-top:50px;}
 
 
+.inactive a {
+    color: var(--orange);
+    font-weight: 800;
+    padding:10px;
+}
 
+.already_account {
+    text-align: center;
+ margin-top:25px;
 
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 

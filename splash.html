@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/prototypestyle.css">
 </head>
 
-<body>
+<body onload="realTimeClock()">
 
     <main>
         <div class="iphonex">
@@ -20,24 +20,7 @@
 
                         <div class="iphoneTop">
 
-                            <div class="clock">
-                                <div class="hours">
-                                    <div class="first">
-                                        <div class="number">0</div>
-                                    </div>
-                                    <div class="second">
-                                        <div class="number">0</div>
-                                    </div>
-                                </div>
-                                <div class="tick">:</div>
-                                <div class="minutes">
-                                    <div class="first">
-                                        <div class="number">0</div>
-                                    </div>
-                                    <div class="second">
-                                        <div class="number">0</div>
-                                    </div>
-                                </div>
+                            <div id="clock">
 
                             </div>
 
@@ -47,17 +30,33 @@
 
                         </div>
 
+
+
+                        <!--       CONTENT                 -->
+
+
+
                         <section class="content">
 
                             <div class="mainImg">
-                                <img src="media/mainImg.svg" alt="">
-                            </div>
-                            
-                            <div class="CTA">
-                                <a href="prototype.html"></a>
+                                <img src="media/splash_img.svg" style="width:394px;" alt="">
                             </div>
 
+                            <div class="CTA">
+                                <a href="prototype.html">explore</a>
+                            </div>
+                            
+                            <div class="already_account">
+                                <p class="inactive">Already have an account? <a href="login.html">Log-in</a></p>
+                            </div>
+                            
                         </section>
+
+
+
+                        <!--   END CONTENT                     -->
+
+
 
                     </div>
                     <div class="screen__front">
